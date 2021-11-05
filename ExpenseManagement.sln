@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseManagement.WebServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManagement.Data", "ExpenseManagement.Data\ExpenseManagement.Data.csproj", "{A6EF7044-DC0D-4373-A726-4CE30C274502}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManagement.Model", "ExpenseManagement.Model\ExpenseManagement.Model.csproj", "{E05464CE-1D06-45C5-89BA-8530F1DE70A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A6EF7044-DC0D-4373-A726-4CE30C274502}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6EF7044-DC0D-4373-A726-4CE30C274502}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6EF7044-DC0D-4373-A726-4CE30C274502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E05464CE-1D06-45C5-89BA-8530F1DE70A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E05464CE-1D06-45C5-89BA-8530F1DE70A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E05464CE-1D06-45C5-89BA-8530F1DE70A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E05464CE-1D06-45C5-89BA-8530F1DE70A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
