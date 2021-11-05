@@ -1,6 +1,8 @@
+using ExpenseManagement.Data.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,8 +25,25 @@ namespace ExpenseManagement.WebService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ExpenseManagementDbContext>(option =>
+
+                option.UseSqlServer(Configuration.GetConnectionString("ConnectionString"))
+            );
+
+            services.AddEntityFrameworkSqlServer().AddDbContext<ExpenseManagementDbContext>(options =>
+            {
+                options.UseLazyLoadingProxies()
+                .UseSqlServer(Configuration["ConnectionString"],
+                              sqlServerOptionsAction: sqlOptions =>
+                              {
+                                  sqlOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
+                              });
+            });
+
             services.AddControllersWithViews();
         }
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
