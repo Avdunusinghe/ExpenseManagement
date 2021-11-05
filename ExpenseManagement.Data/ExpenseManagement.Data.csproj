@@ -21,4 +21,10 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="5.0.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+    <Folder Include="Data\" />
+    <Folder Include="MigrationScripts\" />
+  </ItemGroup>
+
 </Project>
