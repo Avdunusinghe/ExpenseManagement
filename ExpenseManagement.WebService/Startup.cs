@@ -1,4 +1,7 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using ExpenseManagement.Data.Data;
+using ExpenseManagement.WebService.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,7 +26,7 @@ namespace ExpenseManagement.WebService
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ExpenseManagementDbContext>(option =>
 
@@ -41,6 +44,13 @@ namespace ExpenseManagement.WebService
             });*/
 
             services.AddControllersWithViews();
+
+            var container = new ContainerBuilder();
+            container.Populate(services);
+
+            container.RegisterModule(new ApplicationModule());
+
+            return new AutofacServiceProvider(container.Build());
         }
 
 
