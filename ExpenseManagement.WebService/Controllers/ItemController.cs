@@ -1,4 +1,5 @@
-﻿using ExpenseManagement.Data.Data;
+﻿using ExpenseManagement.Business.Interfaces;
+using ExpenseManagement.Data.Data;
 using ExpenseManagement.Model;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,17 +11,17 @@ namespace ExpenseManagement.WebService.Controllers
 {
     public class ItemController : Controller
     {
-        private readonly ExpenseManagementDbContext _db;
-        public ItemController(ExpenseManagementDbContext _db)
+        private readonly IItemService _itemService;
+        public ItemController(IItemService _itemService)
         {
-            this._db = _db;
+            this._itemService = _itemService;
         }
         public IActionResult Index()
         {
 
-            IEnumerable<Item> objectList = _db.Items.OrderBy(x=>x.Id).ToList();
+            var response = _itemService.GetAllItems();
 
-            return View(objectList);
+            return View(response);
         }
     }
 }

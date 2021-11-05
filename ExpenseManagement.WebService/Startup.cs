@@ -26,31 +26,28 @@ namespace ExpenseManagement.WebService
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ExpenseManagementDbContext>(option =>
 
                 option.UseSqlServer(Configuration.GetConnectionString("ExpenseDbConnectionString"))
             );
 
-           /* services.AddEntityFrameworkSqlServer().AddDbContext<ExpenseManagementDbContext>(options =>
-            {
-                options.UseLazyLoadingProxies()
-                .UseSqlServer(Configuration["ConnectionString"],
-                              sqlServerOptionsAction: sqlOptions =>
-                              {
-                                  sqlOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
-                              });
-            });*/
+            /* services.AddEntityFrameworkSqlServer().AddDbContext<ExpenseManagementDbContext>(options =>
+             {
+                 options.UseLazyLoadingProxies()
+                 .UseSqlServer(Configuration["ConnectionString"],
+                               sqlServerOptionsAction: sqlOptions =>
+                               {
+                                   sqlOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
+                               });
+             });*/
+
+          
+
 
             services.AddControllersWithViews();
 
-            var container = new ContainerBuilder();
-            container.Populate(services);
-
-            container.RegisterModule(new ApplicationModule());
-
-            return new AutofacServiceProvider(container.Build());
         }
 
 

@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using ExpenseManagement.Business;
+using ExpenseManagement.Business.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +17,9 @@ namespace ExpenseManagement.WebService.Infrastructure
 
         protected override void Load(ContainerBuilder builder)
         {
-            
+            builder.RegisterType<IItemService>()
+                 .As<ItemService>()
+                 .SingleInstance();
         }
     }
 }
