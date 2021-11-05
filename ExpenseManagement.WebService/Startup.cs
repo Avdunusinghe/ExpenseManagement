@@ -27,10 +27,10 @@ namespace ExpenseManagement.WebService
         {
             services.AddDbContext<ExpenseManagementDbContext>(option =>
 
-                option.UseSqlServer(Configuration.GetConnectionString("ConnectionString"))
+                option.UseSqlServer(Configuration.GetConnectionString("ExpenseDbConnectionString"))
             );
 
-            services.AddEntityFrameworkSqlServer().AddDbContext<ExpenseManagementDbContext>(options =>
+           /* services.AddEntityFrameworkSqlServer().AddDbContext<ExpenseManagementDbContext>(options =>
             {
                 options.UseLazyLoadingProxies()
                 .UseSqlServer(Configuration["ConnectionString"],
@@ -38,7 +38,7 @@ namespace ExpenseManagement.WebService
                               {
                                   sqlOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
                               });
-            });
+            });*/
 
             services.AddControllersWithViews();
         }
