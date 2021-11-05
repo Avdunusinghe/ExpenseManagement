@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManagement.Data", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManagement.Model", "ExpenseManagement.Model\ExpenseManagement.Model.csproj", "{E05464CE-1D06-45C5-89BA-8530F1DE70A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManagement.Business", "ExpenseManagement.Business\ExpenseManagement.Business.csproj", "{45C17F10-4390-4352-BDDA-DB57F99F0B69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E05464CE-1D06-45C5-89BA-8530F1DE70A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E05464CE-1D06-45C5-89BA-8530F1DE70A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E05464CE-1D06-45C5-89BA-8530F1DE70A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45C17F10-4390-4352-BDDA-DB57F99F0B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C17F10-4390-4352-BDDA-DB57F99F0B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C17F10-4390-4352-BDDA-DB57F99F0B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C17F10-4390-4352-BDDA-DB57F99F0B69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
