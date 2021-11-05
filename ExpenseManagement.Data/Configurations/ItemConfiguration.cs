@@ -13,6 +13,8 @@ namespace ExpenseManagement.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Item> builder)
         {
+            builder.ToTable("Item");
+
             builder.HasKey(x => x.Id);
         }
     }
