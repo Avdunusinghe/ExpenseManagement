@@ -17,8 +17,10 @@ namespace ExpenseManagement.WebService.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Item> items = _db.Items;
-            return View(items);
+
+            IEnumerable<Item> objectList = _db.Items.OrderBy(x=>x.Id).ToList();
+
+            return View(objectList);
         }
     }
 }

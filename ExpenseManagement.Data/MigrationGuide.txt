@@ -1,6 +1,7 @@
 ﻿Update-Database -Project ExpenseManagement.Data -StartUp ExpenseManagement.WebService -Verbose
 
 Add-Migration ExpenseManagement00001 -Project  ExpenseManagement.Data -StartUp ExpenseManagement.WebService -Verbose
+Add-Migration ExpenseManagement00002 -Project  ExpenseManagement.Data -StartUp ExpenseManagement.WebService -Verbose
 
 
 Script-Migration -From ExpenseManagement00001 -Project ExpenseManagement.Data -StartUp ExpenseManagement.WebService -Verbose
